@@ -1,0 +1,10 @@
+C:\Users\dyatl\source\repos\OOLandSP\lb2\bin\Debug\lb2.exe.config
+C:\Users\dyatl\source\repos\OOLandSP\lb2\bin\Debug\lb2.exe
+C:\Users\dyatl\source\repos\OOLandSP\lb2\bin\Debug\lb2.pdb
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.csproj.AssemblyReference.cache
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.Form1.resources
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.Properties.Resources.resources
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.csproj.GenerateResource.cache
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.csproj.CoreCompileInputs.cache
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.exe
+C:\Users\dyatl\source\repos\OOLandSP\lb2\obj\Debug\lb2.pdb
