@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.лБ22ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.лБ23ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.лБ24ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,17 +42,16 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.лБ24ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,6 +84,13 @@
             this.лБ23ToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.лБ23ToolStripMenuItem.Text = "ЛБ 2.3";
             this.лБ23ToolStripMenuItem.Click += new System.EventHandler(this.лБ23ToolStripMenuItem_Click);
+            // 
+            // лБ24ToolStripMenuItem
+            // 
+            this.лБ24ToolStripMenuItem.Name = "лБ24ToolStripMenuItem";
+            this.лБ24ToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.лБ24ToolStripMenuItem.Text = "ЛБ 2.4";
+            this.лБ24ToolStripMenuItem.Click += new System.EventHandler(this.лБ24ToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -181,13 +188,6 @@
             this.listBox1.Size = new System.Drawing.Size(120, 290);
             this.listBox1.TabIndex = 0;
             // 
-            // лБ24ToolStripMenuItem
-            // 
-            this.лБ24ToolStripMenuItem.Name = "лБ24ToolStripMenuItem";
-            this.лБ24ToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.лБ24ToolStripMenuItem.Text = "ЛБ 2.4";
-            this.лБ24ToolStripMenuItem.Click += new System.EventHandler(this.лБ24ToolStripMenuItem_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label5);
@@ -206,60 +206,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Задача на двумерный массив";
             // 
-            // dataGridView1
+            // label5
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(235, 290);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 316);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "file.dat";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(249, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "R =";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "C =";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(279, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(50, 20);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "5";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(279, 63);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(50, 20);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.Text = "3";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(252, 100);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Инициал";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label4.Location = new System.Drawing.Point(249, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ответ";
             // 
             // button4
             // 
@@ -272,22 +234,60 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label4
+            // button3
             // 
-            this.label4.Location = new System.Drawing.Point(249, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ответ";
+            this.button3.Location = new System.Drawing.Point(252, 100);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(77, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Инициал";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label5
+            // textBox5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 316);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "file.dat";
+            this.textBox5.Location = new System.Drawing.Point(279, 63);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(50, 20);
+            this.textBox5.TabIndex = 4;
+            this.textBox5.Text = "3";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(279, 26);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(50, 20);
+            this.textBox4.TabIndex = 3;
+            this.textBox4.Text = "5";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(249, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "C =";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(249, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "R =";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(235, 290);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form1
             // 

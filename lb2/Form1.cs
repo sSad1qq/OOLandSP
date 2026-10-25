@@ -16,6 +16,7 @@ namespace lb2
         public Form1()
         {
             InitializeComponent();
+            textBox1.KeyDown += textBox1_KeyDown;
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             groupBox3.Visible = false;
@@ -74,6 +75,15 @@ namespace lb2
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                button1_Click(sender, EventArgs.Empty);
+            }
         }
 
         private void лБ23ToolStripMenuItem_Click(object sender, EventArgs e)

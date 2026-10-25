@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\dyatl\\source\\repos\\OOLandSP\\lb2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|c:\\users\\dyatl\\source\\repos\\oolandsp\\lb2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|C:\\Users\\dyatl\\source\\repos\\OOLandSP\\lb2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|c:\\users\\dyatl\\source\\repos\\oolandsp\\lb2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7CE365-CAAA-44C6-A799-8B4C4065A041}|lb2.csproj|C:\\Users\\dyatl\\source\\repos\\OOLandSP\\lb2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 223,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -38,20 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\dyatl\\source\\repos\\OOLandSP\\lb2\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\dyatl\\source\\repos\\OOLandSP\\lb2\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAswLMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAYwMAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-15T13:02:26.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\dyatl\\source\\repos\\OOLandSP\\lb2\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
