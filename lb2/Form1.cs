@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace lb2
 {
     public partial class Form1 : Form
     {
+        public object Line { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +26,8 @@ namespace lb2
         }
         private void лБ22ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+            groupBox4.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             groupBox3.Visible = false;
@@ -88,6 +93,8 @@ namespace lb2
 
         private void лБ23ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+            groupBox4.Visible = false;
             // Показываем элементы ЛБ 2.3 при выборе пункта меню.
             groupBox1.Visible = false;
             groupBox2.Visible = true;
@@ -131,6 +138,8 @@ namespace lb2
 
         private void лБ24ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+            groupBox4.Visible = false;
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             groupBox3.Visible = true;
@@ -157,7 +166,9 @@ namespace lb2
                     num = random.Next(a, b + 1); // случайное целое число из [a, b], 
                     dataGridView1.Rows[i].Cells[j].Value = num.ToString();
                 }
-            button4.Enabled = true; // кнопка «решить» стала доступна. 
+            button4.Enabled = true; // кнопка «решить» стала доступна.
+            button5.Enabled = true;
+            button6.Enabled = true;
         }
 
         private bool is_prime(int n)
@@ -192,6 +203,44 @@ namespace lb2
             label4.Text = count.ToString();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {   // [Л] button5 “Запись”. 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string name = openFileDialog1.FileName; // полное имя файла, 
+                System.IO.StreamWriter file = new System.IO.StreamWriter(name);
+                file.WriteLine(dataGridView1.RowCount.ToString()); // запись строки,  
+                file.WriteLine(dataGridView1.ColumnCount.ToString());
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        file.WriteLine(dataGridView1.Rows[i].Cells[j].Value.ToString());
+                file.Close();
+                // модальное окно7: 
+                MessageBox.Show("Данные таблицы записаны в файл.");
+            }
+            else
+                MessageBox.Show("Запись данных таблицы в файл не удалась.");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // [Л] button6 “Чтение”. 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string name = openFileDialog1.FileName;
+                System.IO.StreamReader file = new System.IO.StreamReader(name);
+                dataGridView1.RowCount = int.Parse(file.ReadLine()); // чтение строки. 
+                textBox4.Text = dataGridView1.RowCount.ToString();
+                dataGridView1.ColumnCount = int.Parse(file.ReadLine());
+                textBox5.Text = dataGridView1.ColumnCount.ToString();
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        dataGridView1.Rows[i].Cells[j].Value = file.ReadLine();
+                file.Close();
+            }
+            else MessageBox.Show("Данные прочитать не удалось.");
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
@@ -200,6 +249,51 @@ namespace lb2
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void лБ26ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+            groupBox3.Visible = false;
+            groupBox4.Visible = true;
+            chart1.Legends.Clear(); // удалили легенду из chart1.
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        double phi;
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // [Л] button7 "Нарисовать" 
+            chart1.Visible = true;
+            chart1.Series[0].Points.Clear(); // очистка диаграммы, 
+            timer1.Stop();
+            phi = 0.0;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // Угол по номеру точки: без накопления погрешности шага.
+            phi = chart1.Series[0].Points.Count * Math.PI / 100;
+            double r = 2 + Math.Cos(3 * phi) * Math.Sin(2 * phi),
+                   // преобразование функции из полярной СС в прямоугольную: 
+                   x = r * Math.Cos(phi),
+                   y = r * Math.Sin(phi);
+            chart1.Series[0].Points.AddXY(x, y);
+            // Включаем обе граничные точки: 0 и 2π.
+            if (chart1.Series[0].Points.Count == 201)
+                timer1.Stop();
         }
     }
 }
