@@ -27,7 +27,9 @@ namespace lb2
         private void лБ22ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer2.Stop();
             groupBox4.Visible = false;
+            groupBox5.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             groupBox3.Visible = false;
@@ -94,7 +96,9 @@ namespace lb2
         private void лБ23ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer2.Stop();
             groupBox4.Visible = false;
+            groupBox5.Visible = false;
             // Показываем элементы ЛБ 2.3 при выборе пункта меню.
             groupBox1.Visible = false;
             groupBox2.Visible = true;
@@ -139,7 +143,9 @@ namespace lb2
         private void лБ24ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer2.Stop();
             groupBox4.Visible = false;
+            groupBox5.Visible = false;
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             groupBox3.Visible = true;
@@ -253,6 +259,8 @@ namespace lb2
 
         private void лБ26ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timer2.Stop();
+            groupBox5.Visible = false;
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             groupBox3.Visible = false;
@@ -294,6 +302,82 @@ namespace lb2
             // Включаем обе граничные точки: 0 и 2π.
             if (chart1.Series[0].Points.Count == 201)
                 timer1.Stop();
+        }
+
+        
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        int nC; // глобальная переменная для запоминания координаты частицы. 
+        Random rnd; // для генерации случайных чисел. 
+        private void лБ27ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Останавливаем таймеры и скрываем блоки других работ.
+            timer1.Stop();
+            timer2.Stop();
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+            groupBox3.Visible = false;
+            groupBox4.Visible = false;
+            groupBox5.Visible = true;
+            // Изменяем свойства dataGridView2:
+            dataGridView2.ColumnCount = 78;
+            dataGridView2.RowCount = 1;
+            // Стираем частицу, оставшуюся от прошлого запуска.
+            for (int c = 0; c < dataGridView2.ColumnCount; c++)
+                dataGridView2.Rows[0].Cells[c].Style.BackColor = Color.White;
+            // Скрываем заголовки: 
+            dataGridView2.ColumnHeadersVisible = false;    // столбцов, 
+            dataGridView2.RowHeadersVisible = false;         //  строк, 
+            for (int c = 0; c < dataGridView2.ColumnCount; c++)
+                dataGridView2.Columns[c].Width = 7; // ширина столбца = 7, 
+                                                    // начальное положение частицы: 
+            nC = dataGridView2.ColumnCount / 2; // координата точки, 
+                                                // цвет ячейки: 
+            dataGridView2.Rows[0].Cells[nC].Style.BackColor = Color.Red;
+            dataGridView2.ClearSelection(); // убрали выделение, закрывающее частицу.
+            rnd = new Random(12345); // инициализация генератора случайных чисел.
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // [Л] button8 "Старт" 
+            timer2.Enabled = true; // включили timer2 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // [Л] button9 "Стоп" 
+            timer2.Enabled = false; // выключили timer2.
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            // Прошла 0,1 с., моделируем смещение частицы: 
+            double p = 0.4; // вероятность смещения точки влево, 
+            double t = rnd.NextDouble(); // получили очередное случайное число,
+            // в ячейке, где частица, меняем цвет на белый:
+            dataGridView2.Rows[0].Cells[nC].Style.BackColor = Color.White;
+            // За один тик выполняется ровно одна ветка, частица смещается на 1.
+            if (t <= p)
+            {// выпало смещение влево:
+                if (nC > 0)
+                    --nC; // смещение влево,
+                else
+                    ++nC; // отражение частицы от левого экрана вправо.
+            }
+            else
+            {// выпало смещение вправо:
+                if (nC < dataGridView2.ColumnCount - 1)
+                    ++nC; // смещение вправо,
+                else
+                    --nC; // отражение частицы от правого экрана влево.
+            }
+            // в ячейке, в которую сместилась частица, меняем цвет на красный:
+            dataGridView2.Rows[0].Cells[nC].Style.BackColor = Color.Red;
         }
     }
 }

@@ -1,0 +1,13 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+*.user
+*.exe
+*.obj
+*.pdb
+*.ilk
+
+# macOS
+.DS_Store
+*.dSYM/

@@ -1,0 +1,15 @@
+# Только проверки на ошибки. modernize-* и cppcoreguidelines-* не включать:
+# учебный стиль курса допускает new/delete, C-массивы и указатели.
+Checks: >
+  -*,
+  clang-diagnostic-*,
+  bugprone-*,
+  clang-analyzer-*,
+  performance-*,
+  misc-redundant-expression,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-narrowing-conversions,
+  -bugprone-exception-escape,
+  -bugprone-random-generator-seed,
+  -bugprone-command-processor,
+  -performance-avoid-endl
